@@ -1,1 +1,268 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spatial Chain-of-Thought</title>
+
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css" />
+
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <script defer src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <!-- Top banner / hero -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-2 publication-title">
+              Spatial Chain-of-Thought: Bridging Understanding and Generation Models for Spatial Reasoning Generation
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://weichencs.github.io/" target="_blank" rel="noopener">Wei Chen</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Yancheng Long</a><sup>2</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Mingqiao Liu</a><sup>3</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Haojie Ding</a><sup>4</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Yankai Yang</a><sup>2</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Hongyang Wei</a><sup>3</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://yfzhang114.github.io/" target="_blank" rel="noopener">Yi-Fan Zhang</a><sup>5</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Bin Wen</a><sup>4</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Fan Yang</a><sup>4</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Tingting Gao</a><sup>4</sup>
+              </span>
+              <span class="author-block">
+                <a href="#" target="_blank" rel="noopener">Han Li</a><sup>4</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://zjuchenlong.github.io/" target="_blank" rel="noopener">Long Chen</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-6 publication-affiliations">
+              <span class="affiliation-block"><sup>1</sup>HKUST</span>&nbsp;&nbsp;
+              <span class="affiliation-block"><sup>2</sup>HIT SZ</span>&nbsp;&nbsp;
+              <span class="affiliation-block"><sup>3</sup>THU</span>&nbsp;&nbsp;
+              <span class="affiliation-block"><sup>4</sup>Kuaishou</span>&nbsp;&nbsp;
+              <span class="affiliation-block"><sup>5</sup>CASIA</span>
+            </div>
+
+            <!-- Buttons (LLaVA-style) -->
+            <div class="publication-links">
+              <!-- Paper -->
+              <span class="link-block">
+                <a class="button is-dark is-rounded" href="https://arxiv.org/pdf/2602.11980" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code -->
+              <span class="link-block">
+                <a class="button is-dark is-rounded" href="#" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code (Soon)</span>
+                </a>
+              </span>
+
+              <!-- Model -->
+              <span class="link-block">
+                <a class="button is-dark is-rounded" href="#" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-cube"></i></span>
+                  <span>Model (Soon)</span>
+                </a>
+              </span>
+
+              <!-- Dataset -->
+              <span class="link-block">
+                <a class="button is-dark is-rounded" href="#" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>Dataset (Soon)</span>
+                </a>
+              </span>
+
+              <!-- Demo (optional) -->
+              <!-- <span class="link-block">
+                <a class="button is-dark is-rounded" href="#" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-play"></i></span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div> -->
+
+            <!-- Teaser -->
+            <div class="teaser">
+              <img src="./assets/images/teaser.jpg" alt="Teaser image (Figure 1)" />
+              <p class="caption">
+                <b>Figure 1.</b> Comparison of conditioning interfaces for spatially constrained text-to-image generation.
+                (a) <i>Continuous Bridge</i>: MLLM encodes the prompt into continuous features and feeds them to the generation model.
+                (b) <i>Textual Bridge</i>: MLLM expands the prompt into textual CoT, but spatial layout is compressed into language, and fine-grained structure is easily lost.
+                (c) <i>Spatial CoT Bridge</i> (ours): MLLM outputs a <em>Spatial CoT</em> with object-level bounding boxes, which are rendered to an image via interleaved text–coordinates into a spatially-aware diffusion model, enabling faithful synthesis under strict spatial rules (e.g., a 3×4 desk grid with required empty neighbors).
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content">
+            <p>
+               While diffusion models have shown exceptional capabilities in aesthetic image synthesis, they often struggle with complex spatial understanding and reasoning. Existing approaches resort to Multimodal Large Language Models (MLLMs) to enhance this capability. However, they either incur high computational costs through joint training or suffer from spatial information loss when relying solely on textual prompts. To alleviate these limitations, we propose a Spatial Chain-of-Thought (SCoT) framework, a plug-and-play approach that effectively bridges the reasoning capabilities of MLLMs with the generative power of diffusion models. Specifically, we first enhance the diffusion model's layout awareness by training it on an interleaved text-coordinate instruction format. We then leverage state-of-the-art MLLMs as planners to generate comprehensive layout plans, transferring their spatial planning capabilities directly to the generation process. Extensive experiments demonstrate that our method achieves state-of-the-art performance on image generation benchmarks and significantly outperforms baselines on complex reasoning tasks, while also showing strong efficacy in image editing scenarios.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method / Overview -->
+  <section class="section method-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Method</h2>
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <p>
+              <b>Spatial CoT Bridge.</b> An off-the-shelf MLLM planner converts a user prompt into an interleaved
+              text–bounding-box Spatial Chain-of-Thought plan, which is then rendered by a spatially-aware diffusion model.
+            </p>
+          </div>
+
+          <div class="figure-block">
+            <img src="./assets/images/pipeline.jpg" alt="Pipeline (Figure 2)" />
+            <p class="caption">
+              <b>Figure 2.</b> Overview of our plug-and-play framework (MLLM-based planner + spatially-aware renderer).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <h3 class="title is-5">Key Contributions</h3>
+            <ul>
+              <li>We propose <b>Spatial Chain-of-Thought</b>, a spatial planning process that bridges MLLM planning and diffusion rendering in an efficient and <b>plug-and-play</b> way.</li>
+              <li>We build a <b>spatially-aware generation model</b> trained with interleaved text–coordinate instructions, and pair it with an <b>MLLM-based planner</b> that outputs executable bbox-specified layouts for complex spatial constraints.</li>
+              <li>We conduct <b>extensive experiments</b> on text-to-image generation and editing benchmarks, showing that our method significantly outperforms baselines in complex scenarios.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Results</h2>
+
+      <!-- Main table -->
+      <!-- <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <p>
+              <b>Quantitative results.</b>
+            </p>
+          </div>
+
+          <div class="figure-block">
+            <img src="./assets/images/table_t2i_corebench.jpg" alt="Table 1 (T2I-CoReBench)" />
+            <p class="caption">
+              <b>Table 1.</b> Main results on T2I-CoReBench.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Qualitative comparisons -->
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <p>
+              <b>Qualitative comparisons.</b>
+            </p>
+          </div>
+
+          <div class="figure-block">
+            <img src="./assets/images/qual_1.jpg" alt="Qualitative comparison" />
+            <p class="caption">
+              <b>Figure 3.</b> Qualitative comparison in complex spatial scenes across SOTA models and ours.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">BibTeX</h2>
+      <div class="content">
+        <pre><code>@misc{chen2026spatialchainofthoughtbridgingunderstanding,
+      title={Spatial Chain-of-Thought: Bridging Understanding and Generation Models for Spatial Reasoning Generation}, 
+      author={Wei Chen and Yancheng Long and Mingqiao Liu and Haojie Ding and Yankai Yang and Hongyang Wei and Yi-Fan Zhang and Bin Wen and Fan Yang and Tingting Gao and Han Li and Long Chen},
+      year={2026},
+      eprint={2602.11980},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.11980}, 
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <p>
+          This webpage template is inspired by popular academic project pages (e.g., LLaVA-style).
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

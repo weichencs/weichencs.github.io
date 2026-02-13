@@ -1,0 +1,67 @@
+:root {
+  --max-img-width: 1100px;
+}
+
+.hero {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.publication-title {
+  line-height: 1.15;
+}
+
+.publication-authors .author-block {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+.publication-affiliations {
+  margin-top: 8px;
+  color: rgba(0,0,0,0.65);
+}
+
+.publication-links {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.publication-links .link-block {
+  margin: 6px 6px;
+  display: inline-block;
+}
+
+.teaser {
+  margin-top: 18px;
+}
+
+.teaser img {
+  max-width: var(--max-img-width);
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.figure-block {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.figure-block img {
+  width: 100%;
+  max-width: var(--max-img-width);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.7);
+}
+
+.method-section {
+  background: rgba(0,0,0,0.02);
+}
